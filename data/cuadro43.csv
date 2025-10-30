@@ -1,0 +1,19 @@
+tipo_de_vehiculo,total,hombre,mujer,ignorado,fuente_cuadro
+Total,1495.0,986,499,10,cuadro 43
+Motocicleta,673.0,405,266,2,cuadro 43
+Automóvil,379.0,279,94,6,cuadro 43
+Camioneta,103.0,66,37,0,cuadro 43
+Pick Up,101.0,69,32,0,cuadro 43
+Camión,48.0,31,16,1,cuadro 43
+Bus Urbano,38.0,23,15,0,cuadro 43
+Cabezal,23.0,17,6,0,cuadro 43
+Moto Taxi,14.0,11,3,0,cuadro 43
+Microbús,14.0,7,7,0,cuadro 43
+Cuatrimoto,5.0,4,1,0,cuadro 43
+Bicicleta,5.0,5,0,0,cuadro 43
+Panel,3.0,2,1,0,cuadro 43
+Jeep,3.0,1,2,0,cuadro 43
+Montacargas,1.0,1,0,0,cuadro 43
+Taxi,1.0,0,1,0,cuadro 43
+Bus Extraurbano,1.0,1,0,0,cuadro 43
+Ignorado,83.0,64,18,1,cuadro 43
