@@ -1,0 +1,163 @@
+tipo_de_vehiculo,tipo_accidente,cantidad
+Motocicleta,colision,4397
+Automóvil,colision,1657
+Pick Up,colision,844
+Camioneta,colision,799
+Camión,colision,495
+Cabezal,colision,390
+Bus Urbano,colision,186
+Microbús,colision,121
+Moto Taxi,colision,76
+Panel,colision,35
+Cuatrimoto,colision,28
+Tractor,colision,7
+Bus Extraurbano,colision,5
+Jeep,colision,5
+Bicicleta,colision,1
+Montacargas,colision,0
+Taxi,colision,0
+Ignorado,colision,41
+Motocicleta,atropello,697
+Automóvil,atropello,640
+Pick Up,atropello,164
+Camioneta,atropello,114
+Camión,atropello,99
+Cabezal,atropello,49
+Bus Urbano,atropello,58
+Microbús,atropello,19
+Moto Taxi,atropello,18
+Panel,atropello,6
+Cuatrimoto,atropello,7
+Tractor,atropello,2
+Bus Extraurbano,atropello,2
+Jeep,atropello,2
+Bicicleta,atropello,3
+Montacargas,atropello,1
+Taxi,atropello,1
+Ignorado,atropello,191
+Motocicleta,derrape,1172
+Automóvil,derrape,12
+Pick Up,derrape,6
+Camioneta,derrape,3
+Camión,derrape,4
+Cabezal,derrape,2
+Bus Urbano,derrape,1
+Microbús,derrape,2
+Moto Taxi,derrape,6
+Panel,derrape,0
+Cuatrimoto,derrape,3
+Tractor,derrape,0
+Bus Extraurbano,derrape,1
+Jeep,derrape,0
+Bicicleta,derrape,0
+Montacargas,derrape,0
+Taxi,derrape,0
+Ignorado,derrape,7
+Motocicleta,choque,175
+Automóvil,choque,93
+Pick Up,choque,44
+Camioneta,choque,34
+Camión,choque,38
+Cabezal,choque,16
+Bus Urbano,choque,9
+Microbús,choque,9
+Moto Taxi,choque,9
+Panel,choque,6
+Cuatrimoto,choque,3
+Tractor,choque,0
+Bus Extraurbano,choque,0
+Jeep,choque,0
+Bicicleta,choque,0
+Montacargas,choque,0
+Taxi,choque,0
+Ignorado,choque,1
+Motocicleta,vuelco,4
+Automóvil,vuelco,27
+Pick Up,vuelco,32
+Camioneta,vuelco,17
+Camión,vuelco,24
+Cabezal,vuelco,10
+Bus Urbano,vuelco,17
+Microbús,vuelco,4
+Moto Taxi,vuelco,7
+Panel,vuelco,0
+Cuatrimoto,vuelco,1
+Tractor,vuelco,0
+Bus Extraurbano,vuelco,0
+Jeep,vuelco,0
+Bicicleta,vuelco,0
+Montacargas,vuelco,0
+Taxi,vuelco,0
+Ignorado,vuelco,1
+Motocicleta,embarranco,17
+Automóvil,embarranco,13
+Pick Up,embarranco,16
+Camioneta,embarranco,11
+Camión,embarranco,4
+Cabezal,embarranco,2
+Bus Urbano,embarranco,9
+Microbús,embarranco,2
+Moto Taxi,embarranco,0
+Panel,embarranco,2
+Cuatrimoto,embarranco,0
+Tractor,embarranco,0
+Bus Extraurbano,embarranco,0
+Jeep,embarranco,0
+Bicicleta,embarranco,0
+Montacargas,embarranco,0
+Taxi,embarranco,0
+Ignorado,embarranco,2
+Motocicleta,encuneto,0
+Automóvil,encuneto,1
+Pick Up,encuneto,2
+Camioneta,encuneto,0
+Camión,encuneto,0
+Cabezal,encuneto,0
+Bus Urbano,encuneto,0
+Microbús,encuneto,0
+Moto Taxi,encuneto,0
+Panel,encuneto,0
+Cuatrimoto,encuneto,0
+Tractor,encuneto,0
+Bus Extraurbano,encuneto,0
+Jeep,encuneto,0
+Bicicleta,encuneto,0
+Montacargas,encuneto,0
+Taxi,encuneto,0
+Ignorado,encuneto,0
+Motocicleta,caida,0
+Automóvil,caida,0
+Pick Up,caida,0
+Camioneta,caida,0
+Camión,caida,0
+Cabezal,caida,0
+Bus Urbano,caida,1
+Microbús,caida,0
+Moto Taxi,caida,0
+Panel,caida,0
+Cuatrimoto,caida,0
+Tractor,caida,0
+Bus Extraurbano,caida,0
+Jeep,caida,0
+Bicicleta,caida,0
+Montacargas,caida,0
+Taxi,caida,0
+Ignorado,caida,0
+Motocicleta,ignorado,0
+Automóvil,ignorado,0
+Pick Up,ignorado,0
+Camioneta,ignorado,0
+Camión,ignorado,0
+Cabezal,ignorado,0
+Bus Urbano,ignorado,0
+Microbús,ignorado,0
+Moto Taxi,ignorado,0
+Panel,ignorado,0
+Cuatrimoto,ignorado,0
+Tractor,ignorado,0
+Bus Extraurbano,ignorado,0
+Jeep,ignorado,0
+Bicicleta,ignorado,0
+Montacargas,ignorado,0
+Taxi,ignorado,0
+Ignorado,ignorado,3

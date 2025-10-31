@@ -174,6 +174,61 @@ def limpiar_cuadro47(df):
     
     return df_long
 
+def limpiar_cuadro18(df):
+    """
+    Limpia Cuadro 18: Vehículos por tipo de accidente y tipo de vehículo
+    """
+    # Eliminar la fila "Total"
+    df = df[df['tipo_de_vehiculo'] != 'Total'].copy()
+    
+    # Eliminar columnas innecesarias
+    columnas_eliminar = ['fuente_cuadro', 'col_12']
+    for col in columnas_eliminar:
+        if col in df.columns:
+            df = df.drop(col, axis=1)
+    
+    # Convertir de wide a long format para tipos de accidente
+    df_long = df.melt(
+        id_vars=['tipo_de_vehiculo', 'total'],
+        value_vars=['colision', 'atropello', 'derrape', 'choque', 'vuelco', 
+                    'embarranco', 'encuneto', 'caida', 'ignorado'],
+        var_name='tipo_accidente',
+        value_name='cantidad'
+    )
+    
+    # Eliminar columna total
+    df_long = df_long.drop('total', axis=1)
+    
+    return df_long
+
+
+def limpiar_cuadro38(df):
+    """
+    Limpia Cuadro 38: Lesionados por grupos de edad
+    """
+    # Eliminar la fila "Total"
+    df = df[df['grupos_de_edad'] != 'Total'].copy()
+    
+    # Eliminar columna fuente_cuadro
+    if 'fuente_cuadro' in df.columns:
+        df = df.drop('fuente_cuadro', axis=1)
+    
+    return df
+
+
+def limpiar_cuadro54(df):
+    """
+    Limpia Cuadro 54: Fallecidos por grupos de edad
+    """
+    # Eliminar la fila "Total"
+    df = df[df['grupos_de_edad'] != 'Total'].copy()
+    
+    # Eliminar columna fuente_cuadro
+    if 'fuente_cuadro' in df.columns:
+        df = df.drop('fuente_cuadro', axis=1)
+    
+    return df
+
 
 def main():
     """
@@ -188,8 +243,11 @@ def main():
         df_cuadro3 = pd.read_csv('./data/cuadro3.csv', encoding='utf-8')
         df_cuadro7 = pd.read_csv('./data/cuadro7.csv', encoding='utf-8')
         df_cuadro9 = pd.read_csv('./data/cuadro9.csv', encoding='utf-8')
+        df_cuadro18 = pd.read_csv('./data/cuadro18.csv', encoding='utf-8')
         df_cuadro31 = pd.read_csv('./data/cuadro31.csv', encoding='utf-8')
+        df_cuadro38 = pd.read_csv('./data/cuadro38.csv', encoding='utf-8')
         df_cuadro47 = pd.read_csv('./data/cuadro47.csv', encoding='utf-8')
+        df_cuadro54 = pd.read_csv('./data/cuadro54.csv', encoding='utf-8')
         print("Archivos cargados exitosamente")
     except Exception as e:
         print(f"Error al cargar archivos: {e}")
@@ -210,34 +268,34 @@ def main():
     df9_limpio = limpiar_cuadro9(df_cuadro9)
     print(f"Cuadro 9: {len(df9_limpio)} registros")
     
+    df18_limpio = limpiar_cuadro18(df_cuadro18)
+    print(f"Cuadro 18: {len(df18_limpio)} registros")
+    
     df31_limpio = limpiar_cuadro31(df_cuadro31)
     print(f"Cuadro 31: {len(df31_limpio)} registros")
+    
+    df38_limpio = limpiar_cuadro38(df_cuadro38)
+    print(f"Cuadro 38: {len(df38_limpio)} registros")
     
     df47_limpio = limpiar_cuadro47(df_cuadro47)
     print(f"Cuadro 47: {len(df47_limpio)} registros")
     
-    # Guardar datos limpios
+    df54_limpio = limpiar_cuadro54(df_cuadro54)
+    print(f"Cuadro 54: {len(df54_limpio)} registros")
+    
     print("\nGuardando datos procesados...")
     
     df1_limpio.to_csv('./data_clean/data_accidentes_anio_depto.csv', index=False)
     df3_limpio.to_csv('./data_clean/data_accidentes_dia_depto.csv', index=False)
     df7_limpio.to_csv('./data_clean/data_accidentes_dia_hora.csv', index=False)
     df9_limpio.to_csv('./data_clean/data_accidentes_tipo_mes.csv', index=False)
+    df18_limpio.to_csv('./data_clean/data_vehiculos_tipo.csv', index=False)
     df31_limpio.to_csv('./data_clean/data_lesionados_anio_depto.csv', index=False)
+    df38_limpio.to_csv('./data_clean/data_lesionados_edad.csv', index=False)
     df47_limpio.to_csv('./data_clean/data_fallecidos_anio_depto.csv', index=False)
+    df54_limpio.to_csv('./data_clean/data_fallecidos_edad.csv', index=False)
     
     print("Todos los archivos guardados exitosamente")
-    
-    # Mostrar vista previa
-    print("\n Vista previa de datos procesados:")
-    print("\n--- Cuadro 1 (Accidentes por año) ---")
-    print(df1_limpio.head())
-    
-    print("\n--- Cuadro 7 (Accidentes por día/hora) ---")
-    print(df7_limpio.head())
-    
-    print("\n--- Cuadro 9 (Tipos de accidente) ---")
-    print(df9_limpio.head())
     
     print("\n¡Preprocesamiento completado!")
 
