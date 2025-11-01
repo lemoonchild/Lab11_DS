@@ -5,6 +5,12 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import numpy as np
 
+try:
+    from modelos_tab import render_modelos_tab
+except ImportError:
+    st.error("No se pudo importar el módulo de modelos")
+    render_modelos_tab = None
+
 st.set_page_config(
     page_title="Dashboard Accidentes Guatemala",
     page_icon="🚗",
@@ -667,7 +673,7 @@ def main():
             st.info(f"Vehículo: **{st.session_state.tipo_vehiculo_seleccionado}**")
     
     # TABS
-    tab1, tab2, tab3 = st.tabs(["Vista General", "Análisis Detallado", "Comparativas"])
+    tab1, tab2, tab3, tab4 = st.tabs(["Vista General", "Análisis Detallado", "Comparativas", "Modelos"])
     
     # TAB 1: VISTA GENERAL
     with tab1:
@@ -832,6 +838,19 @@ def main():
             fig6 = crear_vis6_fallecidos_lesionados(df_fallecidos, df_lesionados, depto_filtro)
             st.plotly_chart(fig6, use_container_width=True, config={'displayModeBar': False})
             st.caption("Evolución temporal comparativa de fallecidos y lesionados")
+
+    with tab4:
+        if render_modelos_tab is not None:
+            render_modelos_tab()
+        else:
+            st.error('''
+            ⚠️ La pestaña de modelos no está disponible.
+            
+            Asegúrate de que:
+            1. El archivo modelos_tab.py esté en el mismo directorio que dashboard.py
+            2. La carpeta models/ contenga resumen_modelos.json
+            3. No haya errores de sintaxis en el import
+            ''')
 
 if __name__ == "__main__":
     main()
