@@ -1,0 +1,199 @@
+{
+  "fecha_entrenamiento": "2025-10-31 23:49:41",
+  "version": "CORREGIDA",
+  "modelo1_gravedad": {
+    "descripcion": "Clasificación binaria: Predice si un accidente tendrá alta gravedad (alta tasa de mortalidad)",
+    "algoritmos": [
+      "Random Forest",
+      "Gradient Boosting",
+      "Logistic Regression"
+    ],
+    "features": [
+      "año",
+      "departamento_encoded",
+      "accidentes",
+      "lesionados",
+      "tasa_lesionados"
+    ],
+    "n_samples": 110,
+    "metricas": {
+      "Random Forest": {
+        "accuracy": 0.6785714285714286,
+        "precision": 0.6666666666666666,
+        "recall": 0.7142857142857143,
+        "f1_score": 0.6896551724137931,
+        "roc_auc": 0.7397959183673469,
+        "confusion_matrix": [
+          [
+            9,
+            5
+          ],
+          [
+            4,
+            10
+          ]
+        ]
+      },
+      "Gradient Boosting": {
+        "accuracy": 0.5714285714285714,
+        "precision": 0.5555555555555556,
+        "recall": 0.7142857142857143,
+        "f1_score": 0.625,
+        "roc_auc": 0.739795918367347,
+        "confusion_matrix": [
+          [
+            6,
+            8
+          ],
+          [
+            4,
+            10
+          ]
+        ]
+      },
+      "Logistic Regression": {
+        "accuracy": 0.6071428571428571,
+        "precision": 0.6153846153846154,
+        "recall": 0.5714285714285714,
+        "f1_score": 0.5925925925925926,
+        "roc_auc": 0.6377551020408163,
+        "confusion_matrix": [
+          [
+            9,
+            5
+          ],
+          [
+            6,
+            8
+          ]
+        ]
+      }
+    }
+  },
+  "modelo2_cantidad": {
+    "descripcion": "Regresión: Predice la cantidad de accidentes por departamento",
+    "cambios": "Usa 110 registros (departamentos x años) en vez de 4 agregados",
+    "algoritmos": [
+      "Random Forest",
+      "Gradient Boosting",
+      "Ridge Regression"
+    ],
+    "features": [
+      "departamento_encoded",
+      "año_normalizado",
+      "lesionados",
+      "fallecidos"
+    ],
+    "n_samples": 110,
+    "metricas": {
+      "Random Forest": {
+        "mse": 6542.282369597677,
+        "rmse": 80.88437654824124,
+        "mae": 42.448635430454196,
+        "r2": 0.9885649923734809
+      },
+      "Gradient Boosting": {
+        "mse": 19996.152487551004,
+        "rmse": 141.40775257230774,
+        "mae": 51.67753180557423,
+        "r2": 0.9650494822328733
+      },
+      "Ridge Regression": {
+        "mse": 15037.860684879382,
+        "rmse": 122.62895532817436,
+        "mae": 70.99580647213806,
+        "r2": 0.97371589272618
+      }
+    }
+  },
+  "modelo3_tipo": {
+    "descripcion": "Clasificación de nivel de riesgo: Predice si un momento del día/semana tiene riesgo Bajo/Medio/Alto",
+    "cambios": "Cambio completo de enfoque: usa 168 registros (día/hora) en vez de 60 (tipos). Evita overfitting.",
+    "algoritmos": [
+      "Random Forest",
+      "Gradient Boosting",
+      "Decision Tree"
+    ],
+    "features": [
+      "dia_num",
+      "hora_num"
+    ],
+    "n_samples": 168,
+    "clases": [
+      "Bajo",
+      "Medio",
+      "Alto"
+    ],
+    "metricas": {
+      "Random Forest": {
+        "accuracy": 0.6666666666666666,
+        "precision": 0.6832951362363127,
+        "recall": 0.6666666666666666,
+        "f1_score": 0.670479302832244,
+        "confusion_matrix": [
+          [
+            8,
+            3,
+            1
+          ],
+          [
+            5,
+            17,
+            4
+          ],
+          [
+            2,
+            2,
+            9
+          ]
+        ]
+      },
+      "Gradient Boosting": {
+        "accuracy": 0.6078431372549019,
+        "precision": 0.6164124909222949,
+        "recall": 0.6078431372549019,
+        "f1_score": 0.60551500951057,
+        "confusion_matrix": [
+          [
+            8,
+            4,
+            0
+          ],
+          [
+            6,
+            17,
+            3
+          ],
+          [
+            1,
+            6,
+            6
+          ]
+        ]
+      },
+      "Decision Tree": {
+        "accuracy": 0.5686274509803921,
+        "precision": 0.577243018419489,
+        "recall": 0.5686274509803921,
+        "f1_score": 0.5686367880485528,
+        "confusion_matrix": [
+          [
+            8,
+            4,
+            0
+          ],
+          [
+            8,
+            14,
+            4
+          ],
+          [
+            0,
+            6,
+            7
+          ]
+        ]
+      }
+    }
+  }
+}
